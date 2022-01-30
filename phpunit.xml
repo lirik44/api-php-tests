@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phpunit bootstrap="bootstrap.php" colors="true" beStrictAboutTestsThatDoNotTestAnything="true">
+    <testsuites>
+        <testsuite name="api">
+            <file>tests/api/ApiTestCases.php</file>
+        </testsuite>
+    </testsuites>
+</phpunit>

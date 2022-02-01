@@ -113,7 +113,7 @@ class ApiTestCases extends TestCase
     {
         //Send valid request for user creation
         $response = $this->apiHelper->userCreateRequest(200,$this->user->username,$this->user->password,$this->user->email);
-        //Check response has false success state
+        //Check response has true success state
         $this->assertEquals(true,$response['success']);
         //Check message is "User Successfully created"
         $this->assertEquals("User Successfully created",$response['message'][0]);
@@ -127,7 +127,7 @@ class ApiTestCases extends TestCase
     {
         //Send valid request for user creation with additional id
         $response = $this->apiHelper->userCreateRequest(200,$this->user->username,$this->user->password,$this->user->email,$this->user->id);
-        //Check response has false success state
+        //Check response has true success state
         $this->assertEquals(true,$response['success']);
         //Check message is "User Successfully created"
         $this->assertEquals("User Successfully created",$response['message']);

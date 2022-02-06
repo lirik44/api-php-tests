@@ -6,10 +6,14 @@ use function PHPUnit\Framework\assertEquals;
 
 class ApiHelper
 {
+    public function __construct()
+    {
+        $this->client = new \GuzzleHttp\Client();
+    }
+
     public function userCreateRequest($expectedStatusCode,$username = null,$password = null,$email = null,$id = null)
     {
-        $client = new \GuzzleHttp\Client();
-        $response = $client->post(HTTPS_SCHEMA.HOST.USER_CREATE,['http_errors' => false, 'form_params' => [
+        $response =$this->client->post(HTTPS_SCHEMA.HOST.USER_CREATE,['http_errors' => false, 'form_params' => [
             'username' => $username,
             'password' => $password,
             'email' => $email,
@@ -20,10 +24,10 @@ class ApiHelper
         $response = json_decode($response->getBody(), true);
         return $response;
     }
+
     public function userGetRequest($expectedStatusCode,$username = null,$password = null,$email = null,$id = null)
     {
-        $client = new \GuzzleHttp\Client();
-        $response = $client->get(HTTPS_SCHEMA.HOST.USER_GET,['query' => [
+        $response = $this->client->get(HTTPS_SCHEMA.HOST.USER_GET,['query' => [
             'username' => $username,
             'password' => $password,
             'email' => $email,

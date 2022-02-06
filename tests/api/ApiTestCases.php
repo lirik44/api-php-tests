@@ -33,6 +33,7 @@ class ApiTestCases extends TestCase
         //Check message is "A username is required"
         $this->assertEquals("A username is required",$response['message'][0]);
     }
+
     public function test_Create_Request_Username_Only()
     {
         //Send request with only username
@@ -42,6 +43,7 @@ class ApiTestCases extends TestCase
         //Check message is "An Email is required"
         $this->assertEquals("An Email is required",$response['message'][0]);
     }
+
     public function test_Create_Request_Email_Only()
     {
         //Send request with only email
@@ -51,6 +53,7 @@ class ApiTestCases extends TestCase
         //Check message is "A username is required"
         $this->assertEquals("A username is required",$response['message'][0]);
     }
+
     public function test_Create_Request_Pass_Only()
     {
         //Send request with only pass
@@ -60,6 +63,7 @@ class ApiTestCases extends TestCase
         //Check message is "A username is required"
         $this->assertEquals("A username is required",$response['message'][0]);
     }
+
     public function test_Create_Request_Username_Email_Only()
     {
         //Send request with only username and email
@@ -69,6 +73,7 @@ class ApiTestCases extends TestCase
         //Check message is "A password for the user"
         $this->assertEquals("A password for the user",$response['message'][0]);
     }
+
     public function test_Create_Request_Username_Password_Only()
     {
         //Send request with only username and pass
@@ -78,6 +83,7 @@ class ApiTestCases extends TestCase
         //Check message is "An Email is required"
         $this->assertEquals("An Email is required",$response['message'][0]);
     }
+
     public function test_Create_Request_Password_Email_Only()
     {
         //Send request with only email and pass
@@ -87,6 +93,7 @@ class ApiTestCases extends TestCase
         //Check message is "A username is required"
         $this->assertEquals("A username is required",$response['message'][0]);
     }
+
     public function test_Create_Request_Duplicate_Username()
     {
         //Get existing account with id=1
@@ -98,6 +105,7 @@ class ApiTestCases extends TestCase
         //Check message is "This username is taken. Try another."
         $this->assertEquals("This username is taken. Try another.",$response['message'][0]);
     }
+
     public function test_Create_Request_Duplicate_Email()
     {
         //Get existing account with id=1
@@ -109,6 +117,7 @@ class ApiTestCases extends TestCase
         //Check message is "Email already exists"
         $this->assertEquals("Email already exists",$response['message'][0]);
     }
+
     public function test_Create_Request_Valid()//Broken
     {
         //Send valid request for user creation
@@ -123,6 +132,7 @@ class ApiTestCases extends TestCase
         $this->assertEquals($getResultUser->email,$this->user->email);
         $this->assertEquals($getResultUser->id,$this->user->id);
     }
+
     public function test_Create_Request_Valid_With_ID()
     {
         //Send valid request for user creation with additional id
